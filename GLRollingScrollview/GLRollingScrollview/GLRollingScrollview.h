@@ -42,6 +42,17 @@ typedef void(^GLRollingScrollviewDidScrollToIndexBlock)(NSInteger toIndex);
                                        didScroll:(GLRollingScrollviewDidScrollToIndexBlock)didScrollBlock;
 
 /**
+ 设置图片
+ */
+@property (nonatomic,strong) NSArray *imageUrlArray;
+
+
+/**
+ 设置文字
+ */
+@property (nonatomic,strong) NSArray *titleArray;
+
+/**
  *  启动定时器
  */
 - (void)startTimer;

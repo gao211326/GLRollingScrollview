@@ -67,10 +67,6 @@ static NSInteger const kMaxRollingScrollViewNumber = 100;
 
 @property (nonatomic, assign) CFRunLoopTimerRef timer;
 
-@property (nonatomic,strong) NSArray *imageUrlArray;
-
-@property (nonatomic,strong) NSArray *titleArray;
-
 @property (nonatomic,assign) NSInteger totalNumber;
 
 @end
@@ -338,9 +334,10 @@ static NSInteger const kMaxRollingScrollViewNumber = 100;
     NSUInteger index = fabs(x) / self.collectionView.frame.size.width;
     CGFloat fIndex = fabs(x) / self.collectionView.frame.size.width;
     
+
     //下面的第二个条件 可以确保 尽量一次去执行block 而不多次
     if (self.rollingDidScrollBlock && fabs(fIndex - (CGFloat)index) <= 0.00001)
-    {
+    {        
 //            NSLog(@" 打印信息:%ld",(long)currentIndex);
         
         self.rollingDidScrollBlock(currentIndex);
